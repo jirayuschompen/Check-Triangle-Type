@@ -13,17 +13,17 @@
         <div class="row">
             <div class="col-md-4">
                 <label for="side1"><h5>ด้านที่ 1 :</h5></label>
-                <input type="number" step="0.01" name="side1" required max="100" class="form-control mt-4">
+                <input type="number" step="0.01" name="side1" required max="100" class="form-control mt-4" placeholder="0.01-100.00">
             </div>
 
             <div class="col-md-4">
                 <label for="side2"><h5>ด้านที่ 2 :</h5></label>
-                <input type="number" step="0.01" name="side2" required max="100" class="form-control mt-4">
+                <input type="number" step="0.01" name="side2" required max="100" class="form-control mt-4" placeholder="0.01-100.00">
             </div>
 
             <div class="col-md-4">
                 <label for="side3"><h5>ด้านที่ 3 :</h5></label>
-                <input type="number" step="0.01" name="side3" required max="100" class="form-control mt-4">
+                <input type="number" step="0.01" name="side3" required max="100" class="form-control mt-4" placeholder="0.01-100.00">
             </div>
         </div>
 
@@ -42,7 +42,7 @@
 
         // ตรวจสอบทฤษฎีความเท่ากันของสามเหลี่ยม
         if ($side1 + $side2 <= $side3 || $side2 + $side3 <= $side1 || $side1 + $side3 <= $side2) {
-            return "ไม่ใช่สามเหลี่ยม";
+            return "Not a Triagle";
         }
 
         // ตรวจสอบสามเหลี่ยมมุมฉากโดยใช้ทฤษฎีพีทาโกรัส
@@ -50,16 +50,16 @@
         sort($sides);
 
         if ($sides[0]**2 + $sides[1]**2 == $sides[2]**2) {
-            return "สามเหลี่ยมมุมฉาก";
+            return "right triangle";
         }
 
         // ตรวจสอบประเภทของสามเหลี่ยม
         if ($side1 == $side2 && $side2 == $side3) {
-            return "สามเหลี่ยมด้านเท่า";
+            return "equilateral triangle";
         } elseif ($side1 == $side2 || $side2 == $side3 || $side1 == $side3) {
-            return "สามเหลี่ยมหน้าจั่ว";
+            return "isosceles triangle";
         } else {
-            return "สามเหลี่ยมด้านไม่เท่า";
+            return "Scalene triangles";
         }
     }
 
