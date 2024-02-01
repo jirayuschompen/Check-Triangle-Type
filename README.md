@@ -1,2 +1,2 @@
 # Check-Triangle-Type
-#ควรขะรันโดยใช้ Xampp ในการ Hosting
+#ควรรันโดยใช้ Xampp ในการ Hosting
